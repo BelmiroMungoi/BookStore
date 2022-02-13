@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from '../model/cliente';
 
 @Component({
   selector: 'app-cliente-add',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteAddComponent implements OnInit {
 
+  cliente = new Cliente();
+  
   constructor() { }
 
   ngOnInit(): void {
