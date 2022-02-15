@@ -6,5 +6,33 @@
                 <p>Novo</p>
             </a>
         </div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Simple Table</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Endereço</th>
+                                <th>Telefone</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let cliente of clientes">
+                                    <td>{{cliente.id}}</td>
+                                    <td>{{cliente.nome}}</td>
+                                    <td>{{cliente.endereco}}</td>
+                                    <td>{{cliente.telefone}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
