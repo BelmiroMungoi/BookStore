@@ -17,12 +17,19 @@ export class ClienteAddComponent implements OnInit {
   }
 
   salvarCliente() {
-    this.clienteService.saveClientes(this.cliente).subscribe(data => {
-      this.limpar();
-    });
+    if (this.cliente.id != null && this.cliente.id.toString().trim() != null) {
+      this.clienteService.updateCliente(this.cliente).subscribe(data => {
+        this.limpar();
+      });
+      
+    } else {
+      this.clienteService.saveClientes(this.cliente).subscribe(data => {
+        this.limpar();
+      });
+    }
   }
 
-  limpar(){
+  limpar() {
     this.cliente = new Cliente();
   }
 
