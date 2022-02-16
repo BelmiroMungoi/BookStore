@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Cliente } from '../model/cliente';
 import { ClienteService } from '../service/cliente.service';
 
@@ -11,9 +12,14 @@ export class ClienteAddComponent implements OnInit {
 
   cliente = new Cliente();
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(private routeActive: ActivatedRoute,private clienteService: ClienteService) { }
 
   ngOnInit(): void {
+    let id = this.routeActive.snapshot.paramMap.get('id');
+
+    this.clienteService.getClienteById(id).subscribe(data => {
+      this.cliente = data;
+    })
   }
 
   salvarCliente() {
@@ -21,7 +27,7 @@ export class ClienteAddComponent implements OnInit {
       this.clienteService.updateCliente(this.cliente).subscribe(data => {
         this.limpar();
       });
-      
+
     } else {
       this.clienteService.saveClientes(this.cliente).subscribe(data => {
         this.limpar();
