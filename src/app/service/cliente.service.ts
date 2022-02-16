@@ -17,4 +17,8 @@ export class ClienteService {
   saveClientes(cliente: any): Observable<any> {
     return this.http.post<any>(environment.apiBaseUrl + 'cliente/', cliente);
   }
+
+  updateCliente(cliente: any): Observable<any> {
+    return this.http.put<any>(environment.apiBaseUrl + 'cliente/', cliente);
+  }
 }
