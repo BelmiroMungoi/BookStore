@@ -25,4 +25,8 @@ export class ClienteService {
   updateCliente(cliente: any): Observable<any> {
     return this.http.put<any>(environment.apiBaseUrl + 'cliente/', cliente);
   }
+
+  deleteCliente(id: any): Observable<any> {
+    return this.http.delete(environment.apiBaseUrl + 'cliente/' + id, { responseType: 'text' })
+  }
 }
