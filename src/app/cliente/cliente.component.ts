@@ -17,5 +17,11 @@ export class ClienteComponent implements OnInit {
     this.clienteService.getClientes().subscribe(data => {
       this.clientes = data;
     });
-  }  
+  }
+
+  deleteCliente(id: any, index: any) {
+    this.clienteService.deleteCliente(id).subscribe(data => {
+      this.clientes.splice(index, 1);
+    });
+  }
 }
