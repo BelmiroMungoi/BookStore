@@ -5,5 +5,6 @@ export class Cliente{
     endereco!: string;
     telefone!: string;
     sexo!: string;
+    interesse!: string;
     ativo!: boolean;
 }
