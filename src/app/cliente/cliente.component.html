@@ -29,8 +29,8 @@
                                     <td>{{cliente.endereco}}</td>
                                     <td>{{cliente.telefone}}</td>
                                     <td>
-                                        <button class=" btn btn-danger" (click)="deleteCliente(cliente.id, i)"><i class="fa fa-trash-o" style="font-size:20px"></i></button>
-                                        <button class=" btn btn-primary" [routerLink]="['/clienteAdd', cliente.id]" style=" width: 60px"><i class="fa fa-edit" style="font-size:20px"></i></button>
+                                        <button class=" btn btn-danger" (click)="deleteCliente(cliente.id, i)" style=" width: 50px"><i class="fa fa-trash-o" style="font-size:20px"></i></button>
+                                        <button class=" btn btn-primary" [routerLink]="['/clienteAdd', cliente.id]" style=" width: 50px"><i class="fa fa-edit" style="font-size:20px"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
