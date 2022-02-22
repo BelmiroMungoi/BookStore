@@ -14,7 +14,8 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="id">ID</label>
-                                    <input type="text" class="form-control" [(ngModel)]="cliente.id" [ngModelOptions]="{standalone: true}" name="id" disabled>
+                                    <input type="text" class="form-control" [(ngModel)]="cliente.id"
+                                        [ngModelOptions]="{standalone: true}" name="id" disabled>
                                 </div>
                             </div>
                         </div>
@@ -22,13 +23,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nome">Nome</label>
-                                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" [ngModelOptions]="{standalone: true}" name="nome" placeholder="Nome do Cliente">
+                                    <input type="text" class="form-control" [(ngModel)]="cliente.nome"
+                                        [ngModelOptions]="{standalone: true}" name="nome" placeholder="Nome do Cliente">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="endereco">Endereço</label>
-                                    <input type="text" class="form-control" [(ngModel)]="cliente.endereco" [ngModelOptions]="{standalone: true}" name="endereco" placeholder="Endereço do Cliente">
+                                    <input type="text" class="form-control" [(ngModel)]="cliente.endereco"
+                                        [ngModelOptions]="{standalone: true}" name="endereco"
+                                        placeholder="Endereço do Cliente">
                                 </div>
                             </div>
                         </div>
@@ -36,28 +40,63 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="telefone">Telefone</label>
-                                    <input type="text" class="form-control" [(ngModel)]="cliente.telefone" [ngModelOptions]="{standalone: true}" name="telefone" placeholder="Nr de Telefone">
+                                    <input type="text" class="form-control" [(ngModel)]="cliente.telefone"
+                                        [ngModelOptions]="{standalone: true}" name="telefone"
+                                        placeholder="Nr de Telefone">
                                 </div>
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label for="sexo">Sexo</label>
-                                    <select [(ngModel)]="cliente.sexo" [ngModelOptions]="{standalone: true}" name="sexo" class="form-control">
+                                    <select [(ngModel)]="cliente.sexo" [ngModelOptions]="{standalone: true}" name="sexo"
+                                        class="form-control">
                                         <option value="Masculino">Masculino</option>
                                         <option value="Feminino">Feminino</option>
-                                    </select>                                    
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-1">
                                 <div class="form-group">
-                                    <label for="estado">Ativo</label>                                    
-                                    <input type="checkbox" class="form-control" name="estado" [(ngModel)]="cliente.ativo" [ngModelOptions]="{standalone: true}">
+                                    <label for="estado">Ativo</label>
+                                    <input type="checkbox" class="form-control" name="estado"
+                                        [(ngModel)]="cliente.ativo" [ngModelOptions]="{standalone: true}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="interesse">Base de Dados</label>
+                                    <input type="radio" class="form-control" name="interesse" value="Base de Dados" [(ngModel)]="cliente.interesse"
+                                        [ngModelOptions]="{standalone: true}">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="interesse">Programação</label>
+                                    <input type="radio" class="form-control" name="interesse" value="Programação" [(ngModel)]="cliente.interesse"
+                                        [ngModelOptions]="{standalone: true}">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="interesse">Design</label>
+                                    <input type="radio" class="form-control" name="interesse" value="Design" [(ngModel)]="cliente.interesse"
+                                        [ngModelOptions]="{standalone: true}">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="interesse">Outros</label>
+                                    <input type="radio" class="form-control" name="interesse" value="Outros" [(ngModel)]="cliente.interesse"
+                                        [ngModelOptions]="{standalone: true}">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="update ml-auto mr-auto">
-                                <button type="submit" (click)="salvarCliente()" class="btn btn-primary btn-round">Salvar</button>
+                                <button type="submit" (click)="salvarCliente()"
+                                    class="btn btn-primary btn-round">Salvar</button>
                             </div>
                         </div>
                     </form>
