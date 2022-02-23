@@ -94,6 +94,26 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="sexo">Provincia</label>
+                                    <select [(ngModel)]="cliente.sexo" [ngModelOptions]="{standalone: true}" name="sexo"
+                                        class="form-control">
+                                        <option value="">SELECIONE</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="sexo">Distrito</label>
+                                    <select [(ngModel)]="cliente.sexo" [ngModelOptions]="{standalone: true}" name="sexo"
+                                        class="form-control">
+                                        <option value="Masculino">Selecione</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="update ml-auto mr-auto">
                                 <button type="submit" (click)="salvarCliente()"
                                     class="btn btn-primary btn-round">Salvar</button>
