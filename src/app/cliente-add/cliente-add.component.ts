@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cliente } from '../model/cliente';
+import { Provincia } from '../model/provincia';
 import { ClienteService } from '../service/cliente.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { ClienteService } from '../service/cliente.service';
 export class ClienteAddComponent implements OnInit {
 
   cliente = new Cliente();
+  provincias!: Array<Provincia>;
 
   constructor(private routeActive: ActivatedRoute,private clienteService: ClienteService) { }
 
