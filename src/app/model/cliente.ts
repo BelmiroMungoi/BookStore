@@ -1,3 +1,5 @@
+import { Provincia } from "./provincia";
+
 export class Cliente{
 
     id!: number;
@@ -7,4 +9,5 @@ export class Cliente{
     sexo!: string;
     interesse!: string;
     ativo!: boolean;
+    provincia: Provincia = new Provincia();
 }
