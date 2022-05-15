@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Cliente } from '../model/cliente';
 import { Provincia } from '../model/provincia';
 import { ClienteService } from '../service/cliente.service';
+import { ProvinciaService } from '../service/provincia.service';
 
 @Component({
   selector: 'app-cliente-add',
@@ -14,14 +15,19 @@ export class ClienteAddComponent implements OnInit {
   cliente = new Cliente();
   provincias!: Array<Provincia>;
 
-  constructor(private routeActive: ActivatedRoute,private clienteService: ClienteService) { }
+  constructor(private routeActive: ActivatedRoute,private clienteService: ClienteService, private provinciaService: ProvinciaService) { }
 
   ngOnInit(): void {
+
+    this.provinciaService.getProvincias().subscribe(data => {
+      this.provincias = data;
+    });
+    
     let id = this.routeActive.snapshot.paramMap.get('id');
 
     this.clienteService.getClienteById(id).subscribe(data => {
       this.cliente = data;
-    })
+    });
   }
 
   salvarCliente() {
