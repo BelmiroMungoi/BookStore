@@ -13,4 +13,8 @@ export class ProvinciaService {
   getProvincias(): Observable<any> {
     return this.http.get<any>(environment.apiBaseUrl + 'provincia/');
   }
+
+  getDistritos(id: any): Observable<any> {
+    return this.http.get<any>(environment.apiBaseUrl + 'provincia/distrito/' + id)
+  }
 }
