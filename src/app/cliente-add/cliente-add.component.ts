@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cliente } from '../model/cliente';
+import { Distrito } from '../model/distrito';
 import { Provincia } from '../model/provincia';
 import { ClienteService } from '../service/cliente.service';
 import { ProvinciaService } from '../service/provincia.service';
@@ -14,6 +15,7 @@ export class ClienteAddComponent implements OnInit {
 
   cliente = new Cliente();
   provincias!: Array<Provincia>;
+  distritos!: Array<Distrito>
 
   constructor(private routeActive: ActivatedRoute,private clienteService: ClienteService, private provinciaService: ProvinciaService) { }
 
@@ -41,6 +43,12 @@ export class ClienteAddComponent implements OnInit {
         this.limpar();
       });
     }
+  }
+
+  onSelectProv(id: any){
+    this.provinciaService.getDistritos(id).subscribe(data => {
+      this.distritos = data;
+    });
   }
 
   limpar() {
