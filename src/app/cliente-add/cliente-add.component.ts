@@ -16,6 +16,7 @@ export class ClienteAddComponent implements OnInit {
   cliente = new Cliente();
   provincias!: Array<Provincia>;
   distritos!: Array<Distrito>
+  provincia = new Provincia();
 
   constructor(private routeActive: ActivatedRoute,private clienteService: ClienteService, private provinciaService: ProvinciaService) { }
 
