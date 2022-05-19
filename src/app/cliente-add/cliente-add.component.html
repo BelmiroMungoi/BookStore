@@ -97,7 +97,7 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label for="provincia">Provincia</label>
-                                    <select [(ngModel)]="cliente.provincia" [ngModelOptions]="{standalone: true}" name="provincia"
+                                    <select [(ngModel)]="provincia.id" [ngModelOptions]="{standalone: true}" name="provincia"
                                         (change)="onSelectProv($any($event.target).value)" class="form-control">
                                         <option *ngFor="let provincia of provincias" value="{{provincia.id}}">{{provincia.nome}}</option>
                                     </select>
@@ -106,9 +106,9 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label for="distrito">Distrito</label>
-                                    <select [(ngModel)]="cliente.provincia.distrito" [ngModelOptions]="{standalone: true}" name="distrito"
+                                    <select [(ngModel)]="cliente.distrito" [ngModelOptions]="{standalone: true}" name="distrito"
                                         class="form-control">
-                                        <option *ngFor="let distrito of distritos" value="{{distrito.id}}">{{distrito.nome}}</option>                                        
+                                        <option *ngFor="let distrito of distritos" ngValue="{{distrito.id}}">{{distrito.nome}}</option>                                        
                                     </select>
                                 </div>
                             </div>
