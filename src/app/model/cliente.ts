@@ -1,3 +1,4 @@
+import { Distrito } from "./distrito";
 import { Provincia } from "./provincia";
 
 export class Cliente{
@@ -9,5 +10,5 @@ export class Cliente{
     sexo!: string;
     interesse!: string;
     ativo!: boolean;
-    provincia: Provincia = new Provincia();
+    distrito: Distrito = new Distrito();
 }
